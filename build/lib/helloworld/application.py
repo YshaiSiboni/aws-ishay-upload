@@ -67,7 +67,7 @@ def get_frm():
     print(str(resp))
     return Response(json.dumps(str(resp['Items'])), mimetype='application/json', status=200)
     
-# curl -i -X POST -d'{"form_title":"form title1", "form_body":"where is it?", "form_type":"finance"}' -H "Content-Type: application/json" http://localhost:5000/set_form/frm8
+# curl -i -X POST -d'{"form_title":"form title1", "form_body":"where is it?", "form_type":"finance"}' -H "Content-Type: application/json" http://localhost:5000/set_form/frm5
 # curl -i -X POST -d'{"form_title":"form title1", "form_body":"where is it?", "form_type":"finance"}' -H "Content-Type: application/json" http://ec2-3-84-196-179.compute-1.amazonaws.com/set_form/gx05
 @application.route('/set_form/<frm_id>', methods=['POST'])
 def set_doc(frm_id):
@@ -92,7 +92,7 @@ def set_doc(frm_id):
     
     return Response(json.dumps(item), mimetype='application/json', status=200)
     
-# curl -i http://"localhost:5000/del_form?frm_id=frm8&frm_type=finance"
+# curl -i http://"localhost:5000/del_form?frm_id=frm6&frm_type=finance"
 @application.route('/del_form', methods=['GET'])
 def del_doc():
     frm_id = request.args.get('frm_id')
